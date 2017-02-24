@@ -1,0 +1,138 @@
+/*------------------------------------*\
+$CONTACTO
+\*------------------------------------*/
+.contacto {
+    &--banner {
+        position: relative;
+        height: 90px;
+        overflow: hidden;
+        img {
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    #map {
+        display: none;
+    }
+    .tit--contact {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+    &--datos {
+        p {
+            margin: 0;
+        }
+        .contacto-content--block {
+            margin-bottom: 20px;
+        }
+        .foot-phone {
+            color: $principal;
+            display: inline-block;
+            margin-left: 3px;
+            span {
+                color: $contraste;
+                margin-right: 2px;
+            }
+            &:hover {
+                border-bottom-color: $blanco;
+            }
+        }
+    }
+    @include respond-to(tablet) {
+        &--banner {
+            height: 365px;
+            img {
+                height: 100%;
+                min-width: 100%;
+                width: auto;
+            }
+        }
+        .contancto--content {
+            padding: 0 10px;
+            &::after {
+                content: '';
+                display: block;
+                float: none;
+                clear: both;
+            }
+        }
+        &--datos {
+            float: left;
+            width: 290px;
+            position: absolute;
+            top: -50px;
+            left: 10px;
+            background: $blanco;
+            border: 1px solid $claro;
+            &--text {
+                padding: 20px;
+                h1 {
+                    margin: 0 0 20px 0;
+                    padding-bottom: 10px;
+                    border-bottom: 1px solid $contraste;
+                    font-size: cr(22px);
+                    font-weight: 300;
+                    text-align: left;
+                }
+            }
+        }
+        //Formulario contacto
+        &--form {
+            padding-left: 320px;
+        }
+        #map {
+            width: 100%;
+            height: 260px;
+            display: block;
+            margin-top: 20px;
+        }
+        //Formulario Trabaja con nosotros
+        &--form--trabajo {
+            padding-left: 0;
+            max-width: 770px;
+            margin: auto;
+        }
+    }
+    @include respond-to(desktop) {
+        &--banner {
+            img {
+                left: 0;
+                margin-left: 0;
+            }
+        }
+        &--datos {
+            width: 380px;
+            top: -90px;
+        }
+        //Formulario contacto
+        &--form {
+            padding-left: 420px;
+            h2 {
+                font-size: cr(30px);
+            }
+            &__left, &__right {
+                width: 50%;
+                float: left;
+            }
+            &__left {
+                padding-right: 10px;
+            }
+            &__right {
+                padding-left: 10px;
+            }
+        }
+        //Formulario Trabaja con nosotros
+        &--form--trabajo {
+            padding-left: 0;
+        }
+        #map {
+            height: 348px;
+        }
+        h1 {
+            font-size: cr(40px);
+            font-weight: bold;
+        }
+    }
+}

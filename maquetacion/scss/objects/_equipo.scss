@@ -1,0 +1,93 @@
+/*------------------------------------*\
+$EQUIPO
+\*------------------------------------*/
+.team {
+    &--group {
+        clear: both;
+        margin: 0 -5px 10px -5px;
+        &::after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+    }
+    &--title {
+        clear: both;
+        font-size: cr(20px);
+        margin-bottom: 30px;
+        &::after {
+            content: '';
+            display: block;
+            float: none;
+            clear: both;
+        }
+    }
+    &--member {
+        width: (100%/2);
+        padding: 0 5px;
+        float: left;
+        margin-bottom: 20px;
+        &:nth-child(2n) {
+            clear: right;
+        }
+        &--img {
+            width: 100%;
+            margin-bottom: 10px;
+            overflow: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        &--text {
+            h2 {
+                font-size: cr(20px);
+                font-weight: 300;
+                line-height: 1;
+            }
+        }
+        &__cargo {
+            font-size: cr(15px);
+            color: $contraste;
+            margin: 0;
+        }
+    }
+    @include respond-to(tablet) {
+        &--group {
+            margin: 0 -15px 10px -15px;
+        }
+        &--member {
+            width: (100%/3);
+            padding: 0 15px;
+            &--img {
+                max-height: 230px;
+            }
+            &:nth-child(2n) {
+                clear: none;
+            }
+            &:nth-child(3n) {
+                clear: right;
+            }
+        }
+    }
+    @include respond-to(ipad) {
+        &--title {
+            border-bottom: 1px solid $claro;
+            p {
+                border-bottom: 1px solid $blanco;
+                margin-bottom: -1px;
+                float: left;
+                line-height: .8;
+            }
+        }
+        &--member {
+            width: (100%/5);
+            &:nth-child(3n),  &:nth-child(2n) {
+                clear: none;
+            }
+            &:nth-child(5n) {
+                clear: right;
+            }
+        }
+    }
+}

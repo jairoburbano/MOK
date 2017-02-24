@@ -1,0 +1,291 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.box-foot {
+    background: $claro;
+    margin-top: 40px;
+    padding-top: 20px;
+    position: relative;
+    top: -379px;
+    a {
+        border-bottom: none;
+        color: $principal;
+        &:hover {
+            color: $contraste;
+        }
+    }
+    &__three-cols {
+        width: 100%;
+        font-size: cr(16px);
+        @include respond-to(tablet) {
+            width: (100%/3);
+            float: left;
+            padding: 10px 20px 0;
+        } 
+    }
+    &__mobile {
+        margin: 20px 0 30px 0;
+        a {
+            width: (100%/3);
+            text-align: center;
+            float: left;
+            color: $principal;
+            img {
+                width: 30px;
+                height: 30px;
+                margin: auto;
+                display: block;
+                margin-bottom: 5px;
+            }
+        }
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+    &__desk {
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+            font-size: cr(20px);
+            line-height: 1.1;
+            .icon-plus {
+                color: $contraste;
+            }
+            .message {
+                font-size: cr(16px);
+                line-height: 1;
+                clear: both;
+                display: block;
+            }
+            img {
+                display: none;
+            }
+            &--box {
+                margin-bottom: 10px;
+            }
+        }
+        @include respond-to(desktop) {
+            font-size: cr(25px);
+            &--box {
+                position: relative;
+                width: 60%;
+            }
+            .message {
+                margin-top: 5px;
+            }
+            img {
+                display: block;
+                position: absolute;
+                left: -35px;
+                margin: auto;
+            }
+            .small-box {
+                width: 50%;
+                float: left;
+                margin-top: 20px;
+                font-size: cr(20px);
+                &:last-child {
+                    padding-left: 10px;
+                    img {
+                        left: -15px;
+                    }
+                }
+            }
+        }
+    }
+    .newsletter {
+        margin: 20px 0 30px 0;
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            .msg-error {
+                display: none;
+                position: absolute;
+                bottom: -35px;
+                right: 0;
+                color: red;
+            }
+            &.error {
+                .msg-error {
+                    display: block;
+                }
+                .inp-mail {
+                    border-bottom-color: red;
+                }
+            }
+            .inp-mail {
+                width: 100%;
+                border: none;
+                border-bottom: 2px solid $principal;
+                opacity: .7;
+                transition: all 300ms;
+                padding: 0 40px 5px 5px;
+                background-color: transparent;
+                &:focus, &:focus + .send-news {
+                    opacity: 1;
+                    outline: none;
+                }
+            }
+            ::-webkit-input-placeholder {
+                font-style: italic;
+            }
+            .send-news {
+                width: 70px;
+                height: 22px;
+                line-height: 1;
+                position: absolute;
+                top: 3px;
+                right: 0;
+                opacity: .5;
+                transition: all 300ms;
+                background-color: transparent;
+                border: 2px solid $contraste;
+                color: $contraste;
+                font-size: cr(13px);
+                font-weight: 600;
+                &:focus {
+                    outline: none;
+                }
+                &:hover {
+                    color: $blanco;
+                    background: $contraste;
+                }
+            }
+        }
+        .send {
+            display: block;
+            width: 100%;
+            background: $contraste;
+            color: $blanco;
+            text-align: center;
+            padding: 10px 0;
+            border: none;
+        }
+        @include respond-to(desktop) {
+            margin: 20px 0 0 0;
+            .input-group {
+                margin-bottom: 50px;
+            }
+            .send {
+                max-width: 215px;
+            }
+        }
+    }
+    .logo-foot {
+        width: 112px;
+        display: none;
+        margin: auto;
+        @include respond-to(tablet) {
+            margin: 0px auto 50px;
+            display: block;
+        }
+    }
+
+    .trabaja {
+        width: 180px;
+        background: $contraste;
+        color: $blanco;
+        text-align: center;
+        padding: 10px;
+        margin: auto;
+        border: 1px solid $contraste;
+        &:hover {
+            background: $claro;
+        }
+    }
+    .redes-foot {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        .icon {
+            margin-bottom: 10px;
+            margin-right: 10px;
+            text-align: center;
+            width: 40%;
+            border: 2px solid $gris;
+            display: inline-block;
+            padding: 5px 15px;
+            color: $principal;
+            transition: all 300ms;
+            min-width: 130px;
+            &__facebook, &__twitter {
+                width: 20px;
+                height: 20px;
+                display: inline-block;
+                background: url(../img/facebook.svg) center center no-repeat;
+                vertical-align: middle;
+                margin-left: 0;
+            }
+            &__twitter {
+                background-image: url(../img/twitter.svg);
+                margin-left: 5px;
+            }
+            &:hover {
+                background: $gris;
+            }
+        }
+        @include respond-to(desktop) {
+            margin-top: 30px;
+            .icon {
+                float: left;
+            }
+        }
+    }
+    &__fullsize {
+        border-top: 1px solid $gris;
+        margin-top: 20px;
+        padding: 15px 0 15px 20px;
+        text-align: center;
+        p {
+            line-height: 1.1;
+            position: relative;
+            text-align: left;
+            padding-left: 50px;
+            text-align: left;
+            &::after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 20px;
+                background: url(../img/place.svg) left center no-repeat;
+                top: 50%;
+                margin-top: -10px;
+                left: 50%;
+                margin-left: -140px;
+            }
+            @include respond-to(tablet) {
+                padding-left: 0;
+                text-align: center;
+                &::after {
+                    margin-left: -170px;
+                }
+            }
+        }
+    }   
+}
+//Selección paises footer
+.paises {
+    display: block;
+    margin-left: -40px;
+    border-bottom: 1px solid $gris;
+    padding-bottom: 5px;
+    display: none;
+    margin-bottom: 10px;
+    li {
+        display: inline-block;
+        margin: 0 8px;
+        font-weight: bold;
+        &.icon--flag {
+            transition: all 300ms;
+            a {
+                opacity: .3;
+                &.active, &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    @include respond-to(desktop) {
+        display: block;
+    }
+}

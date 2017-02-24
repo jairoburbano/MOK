@@ -1,0 +1,21 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.btn {
+    padding: 5px 30px;
+    text-align: center;
+    &--standard {
+        border: 2px solid $blanco;
+        color: $blanco;
+        display: inline-block;
+    }
+    &--border {
+        border: 2px solid $claro;
+        color: $principal;
+        padding: 5px;
+        margin: 10px auto;
+        &__color {
+            border-color: $contraste;
+        }
+    }
+}

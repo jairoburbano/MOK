@@ -1,0 +1,282 @@
+/*------------------------------------*\
+$INDEX
+\*------------------------------------*/
+/*Loader*/
+.loading {
+    height: 600px; 
+    overflow: hidden;
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        z-index: $level2;
+    }
+}
+.servicios {
+    .controls {
+        border-bottom: 1px solid $claro;
+        padding-bottom: 15px;
+        li {
+            width: (100%/3);
+            float: left;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+            font-weight: 600;
+            &.flex-active {
+                color: $contraste;
+                &::after {
+                    content: '';
+                    width: 50px;
+                    position: absolute;
+                    bottom: -15px;
+                    left: 50%;
+                    margin-left: -25px;
+                    border-bottom: 2px solid $contraste;
+                }
+            }
+        }
+    }
+    &--slider {
+        border-bottom: 2px solid $claro;
+        margin-bottom: 20px;
+        .flex-direction-nav {
+            display: none;
+        }
+    }
+    @include respond-to(tablet) {
+        .controls {
+            &--list {
+                width: 342px;
+                margin: auto;
+            }
+            li {
+                font-size: cr(20px);
+                &.flex-active {
+                    &::after {
+                        width: 100%;
+                        left: 0;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+        &--slider {
+            padding: 30px 50px;
+        }
+    }
+    @include respond-to(desktop) {
+        &--slider {
+            padding: 30px 0;
+        }
+    }
+}
+.service-images {
+    &--box {
+        margin: 10px 0;
+        height: 200px;
+    }
+    .image__text{
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        span {
+            position: absolute;
+            width: 100%;
+            font-size: cr(20px);
+            font-weight: bold;
+            text-align: center;
+            color: $blanco;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            line-height: 1;
+            display: block;
+            padding: 0 15px;
+        }
+        img {
+            min-width: 100%;
+            height: 100%;
+            max-width: 300%;
+            opacity: .8;
+            position: relative;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        &:hover {
+            border-bottom-color: $blanco;
+            &::after {
+                background: $contraste;
+            }
+        }
+        &::after {
+            content: '';
+            background: $oscuro;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 300ms;
+        }
+    }
+    &--wide {
+        .image__text{
+            img {
+                width: 100px;
+                height: auto;
+            }
+        }
+    }
+    @include respond-to(tablet) {
+        &--box {
+            width: 50%;
+            float: left;
+            padding: 0 10px;
+        }
+    }
+    @include respond-to(desktop) {
+        &--box {
+            width: 100%;
+        }
+        &--right, &--left {
+            width: 50%;
+            float: left;
+            &:after {
+                content: '';
+                float: none;
+                clear: both;
+                display: block;
+            }
+        }
+        &--right {
+            .service-images--box{
+                height: 420px;
+                padding-right: 10px;
+                padding-left: 0;
+            }
+        }
+        &--left {
+            padding-left: 10px;
+            padding-right: 0;
+            .service-images--box{
+                width: 50%;
+                &.service-images--wide {
+                    width: 100%;
+                }
+            }
+        }
+        &--large, &--portrait {
+            height: 420px;
+        }
+        &--large {
+            width: 50%;
+        }
+        &--portrait {
+            width: 25%;
+        }
+    }
+}
+//Noticias
+.noticias {
+    &:after {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+    .box-news {
+        width: 100%;
+        margin-bottom: 40px;
+        &__image {
+            width: 100%;
+            display: block;
+            border-bottom: 4px solid $contraste;
+            margin-bottom: 15px;
+            img {
+                width: 100%;
+            }
+        }
+        &__content {
+            width: 100%;
+            padding: 0 10px;
+            .date {
+                font-size: (13px);
+                font-weight: bold;
+                a, span {
+                    float: left;
+                    margin-right: 5px;
+                }
+                a {
+                    color: $principal;
+                    &:hover {
+                        border-bottom-color: $blanco;
+                        color: $contraste;
+                    }
+                }
+            }
+            h3 {
+                line-height: 1.2;
+                margin: 10px 0;
+                font-weight: normal;
+                a {
+                    color: $principal;
+                    &:hover {
+                        border-bottom-color: $blanco;
+                        color: $contraste;
+                    }
+                }
+            }
+            p {
+                line-height: 1.2;
+            }
+        }
+    }
+    @include respond-to(tablet) {
+        padding: 0 50px;
+        .box-news {
+            clear: both;
+            margin-bottom: 0;
+            &__image, &__content {
+                width: 50%;
+                float: left;
+            }
+            &__content {
+                padding-left: 10px;
+            }
+        }
+    }
+    @include respond-to(desktop) {
+        padding: 0;
+        .box-news {
+            width: 50%;
+            float: left;
+            clear: none;
+            &__content {
+                padding-right: 20px;
+            }
+        }
+    }
+}
+.date {
+    &--cat {
+        float: left;
+        margin-right: 5px;
+    }
+    span {
+        color: $contraste;
+    }
+    &::after {
+        content: '';
+        display: block;
+        float: none;
+        clear: both;
+    }
+}

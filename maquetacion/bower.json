@@ -1,0 +1,30 @@
+{
+  "name": "Mok",
+  "version": "1.0.0",
+  "authors": [
+    "Agencia Digital Reactor <contacto@reactor.cl>"
+  ],
+  "description": "Descripción del tema",
+  "keywords": [
+    ""
+  ],
+  "license": "",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "flexlider": "~2.5.0",
+    "jquery": "~2.1.4",
+    "shufflejs": "~3.1.1",
+    "susy": "~2.2.5"
+  },
+  "resolutions": {
+    "jquery": "~2.1.4"
+  }
+}
